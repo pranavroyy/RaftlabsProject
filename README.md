@@ -59,8 +59,8 @@ nextjs-seo-demo/
 ### Installation
 
 ```bash
-git clone <repository-url>
-cd nextjs-seo-demo
+git clone https://github.com/pranavroyy/RaftlabsProject.git
+cd RaftlabsProject
 npm install
 npm run dev
 ````
