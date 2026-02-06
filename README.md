@@ -88,6 +88,11 @@ Keyword Research Process
   "publisher": {...}
 }
 ```
+### Technical Challenges Overcome
+1. **Dynamic sitemap generation**: Solved with `getServerSideProps`
+2. **Type-safe props**: TypeScript interfaces for all data
+3. **SEO metadata management**: Centralized in page components
+4. **Responsive design**: CSS custom properties and media queries
 
 ## Project Structure
 
@@ -164,3 +169,11 @@ This project demonstrates how server-side rendering combined with structured dat
 * Interactive examples
 * Blog expansion
 * Internationalization support
+
+## Resources
+
+- [Next.js SSR Documentation](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
+- [Google Search Central](https://developers.google.com/search/docs)
+- [Schema.org Documentation](https://schema.org/)
+- [OpenGraph Protocol](https://ogp.me/)
+- Youtube Channels Cand Dev and Code in Flow
