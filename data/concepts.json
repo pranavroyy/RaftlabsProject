@@ -1,0 +1,323 @@
+[
+  {
+    "slug": "recursion",
+    "title": "Recursion in Programming",
+    "description": "Learn how recursion works, when to use it, and master recursive problem-solving techniques in programming.",
+    "category": "Algorithms",
+    "difficulty": "Intermediate",
+    "keywords": ["recursion", "recursive function", "base case", "call stack"],
+    "content": {
+      "introduction": "Recursion is a fundamental programming technique where a function calls itself to solve smaller instances of the same problem. It's an elegant approach for solving problems that can be broken down into similar sub-problems.",
+      "keyPoints": [
+        "A recursive function must have a base case to prevent infinite loops",
+        "Each recursive call should move closer to the base case",
+        "Recursion uses the call stack to keep track of function calls",
+        "Can be more intuitive than iterative solutions for certain problems"
+      ],
+      "useCases": [
+        "Tree and graph traversal",
+        "Divide and conquer algorithms (merge sort, quick sort)",
+        "Mathematical calculations (factorial, fibonacci)",
+        "Backtracking problems (N-Queens, Sudoku solver)"
+      ],
+      "example": "function factorial(n) {\n  // Base case\n  if (n <= 1) return 1;\n  // Recursive case\n  return n * factorial(n - 1);\n}",
+      "commonPitfalls": [
+        "Missing or incorrect base case leading to stack overflow",
+        "Not making progress toward the base case",
+        "Excessive memory usage from deep recursion",
+        "Performance issues with redundant calculations"
+      ]
+    },
+    "relatedConcepts": ["dynamic-programming", "call-stack", "tail-recursion"],
+    "imageDescription": "Diagram showing recursive function calls forming a tree structure"
+  },
+  {
+    "slug": "async-await",
+    "title": "Async/Await in JavaScript",
+    "description": "Master asynchronous programming with async/await syntax for cleaner, more readable JavaScript code.",
+    "category": "JavaScript",
+    "difficulty": "Intermediate",
+    "keywords": ["async await", "promises", "asynchronous javascript", "async function"],
+    "content": {
+      "introduction": "Async/await is modern JavaScript syntax that makes working with asynchronous code feel synchronous. It provides a cleaner way to handle Promises compared to traditional .then() chaining.",
+      "keyPoints": [
+        "async keyword declares an asynchronous function that returns a Promise",
+        "await pauses execution until the Promise resolves",
+        "Makes asynchronous code more readable and maintainable",
+        "Error handling works naturally with try/catch blocks"
+      ],
+      "useCases": [
+        "API calls and HTTP requests",
+        "Database operations",
+        "File system operations",
+        "Any operation that takes time to complete"
+      ],
+      "example": "async function fetchUserData(userId) {\n  try {\n    const response = await fetch(`/api/users/${userId}`);\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error('Error fetching user:', error);\n  }\n}",
+      "commonPitfalls": [
+        "Forgetting to use await keyword",
+        "Not handling errors with try/catch",
+        "Using await in loops instead of Promise.all()",
+        "Mixing async/await with .then() unnecessarily"
+      ]
+    },
+    "relatedConcepts": ["promises", "callbacks", "event-loop"],
+    "imageDescription": "Flow diagram showing async/await execution flow"
+  },
+  {
+    "slug": "closures",
+    "title": "Closures in JavaScript",
+    "description": "Understand JavaScript closures and how they enable powerful programming patterns like data privacy and function factories.",
+    "category": "JavaScript",
+    "difficulty": "Advanced",
+    "keywords": ["closures", "lexical scope", "javascript closure", "encapsulation"],
+    "content": {
+      "introduction": "A closure is created when an inner function has access to variables from its outer function's scope, even after the outer function has finished executing. This is one of JavaScript's most powerful and misunderstood features.",
+      "keyPoints": [
+        "Closures give access to outer function's scope from inner function",
+        "Variables are 'closed over' and remain accessible",
+        "Each closure maintains its own independent scope",
+        "Closures are created every time a function is created"
+      ],
+      "useCases": [
+        "Data privacy and encapsulation",
+        "Function factories and currying",
+        "Event handlers and callbacks",
+        "Module pattern implementation"
+      ],
+      "example": "function createCounter() {\n  let count = 0;\n  return {\n    increment: () => ++count,\n    decrement: () => --count,\n    getCount: () => count\n  };\n}\nconst counter = createCounter();\ncounter.increment(); // 1",
+      "commonPitfalls": [
+        "Memory leaks from unintentional closures",
+        "Confusing behavior in loops with closures",
+        "Performance impact from excessive closures",
+        "Debugging difficulties due to hidden state"
+      ]
+    },
+    "relatedConcepts": ["scope", "hoisting", "iife"],
+    "imageDescription": "Conceptual diagram of closure scope chain"
+  },
+  {
+    "slug": "dynamic-programming",
+    "title": "Dynamic Programming",
+    "description": "Learn dynamic programming techniques to optimize recursive solutions using memoization and tabulation.",
+    "category": "Algorithms",
+    "difficulty": "Advanced",
+    "keywords": ["dynamic programming", "memoization", "dp", "optimization"],
+    "content": {
+      "introduction": "Dynamic Programming is an optimization technique that solves complex problems by breaking them down into simpler subproblems and storing results to avoid redundant calculations. It dramatically improves performance for problems with overlapping subproblems.",
+      "keyPoints": [
+        "Store solutions to subproblems to avoid recomputation",
+        "Two approaches: memoization (top-down) and tabulation (bottom-up)",
+        "Requires optimal substructure and overlapping subproblems",
+        "Trades space for time complexity improvements"
+      ],
+      "useCases": [
+        "Fibonacci sequence calculation",
+        "Longest common subsequence",
+        "Knapsack problems",
+        "Shortest path algorithms"
+      ],
+      "example": "function fibonacci(n, memo = {}) {\n  if (n in memo) return memo[n];\n  if (n <= 2) return 1;\n  memo[n] = fibonacci(n-1, memo) + fibonacci(n-2, memo);\n  return memo[n];\n}",
+      "commonPitfalls": [
+        "Not identifying overlapping subproblems",
+        "Incorrect state definition",
+        "Excessive memory usage in tabulation",
+        "Missing base cases in recursive solutions"
+      ]
+    },
+    "relatedConcepts": ["recursion", "memoization", "greedy-algorithms"],
+    "imageDescription": "Visualization of dynamic programming solution space"
+  },
+  {
+    "slug": "rest-api",
+    "title": "RESTful API Design",
+    "description": "Design and build scalable REST APIs following industry best practices and architectural principles.",
+    "category": "Backend",
+    "difficulty": "Intermediate",
+    "keywords": ["rest api", "restful", "api design", "http methods"],
+    "content": {
+      "introduction": "REST (Representational State Transfer) is an architectural style for designing networked applications. RESTful APIs use HTTP requests to perform CRUD operations and follow specific principles for resource-based interactions.",
+      "keyPoints": [
+        "Uses standard HTTP methods (GET, POST, PUT, DELETE)",
+        "Resources are identified by URIs",
+        "Stateless client-server communication",
+        "Responses can be cached for performance"
+      ],
+      "useCases": [
+        "Web service APIs",
+        "Mobile application backends",
+        "Microservices communication",
+        "Third-party integrations"
+      ],
+      "example": "// RESTful endpoints\nGET    /api/users      // Get all users\nGET    /api/users/:id  // Get specific user\nPOST   /api/users      // Create new user\nPUT    /api/users/:id  // Update user\nDELETE /api/users/:id  // Delete user",
+      "commonPitfalls": [
+        "Using verbs in URLs instead of nouns",
+        "Not using proper HTTP status codes",
+        "Inconsistent naming conventions",
+        "Exposing implementation details in API"
+      ]
+    },
+    "relatedConcepts": ["http-protocol", "graphql", "api-authentication"],
+    "imageDescription": "REST API architecture diagram"
+  },
+  {
+    "slug": "dependency-injection",
+    "title": "Dependency Injection Pattern",
+    "description": "Master dependency injection to write loosely coupled, testable, and maintainable code.",
+    "category": "Design Patterns",
+    "difficulty": "Advanced",
+    "keywords": ["dependency injection", "di", "inversion of control", "design pattern"],
+    "content": {
+      "introduction": "Dependency Injection is a design pattern that implements Inversion of Control for resolving dependencies. Instead of a class creating its own dependencies, they are provided (injected) from outside, promoting loose coupling and testability.",
+      "keyPoints": [
+        "Dependencies are provided externally, not created internally",
+        "Promotes loose coupling between components",
+        "Makes testing easier with mock dependencies",
+        "Three types: constructor, setter, and interface injection"
+      ],
+      "useCases": [
+        "Service layer implementations",
+        "Testing and mocking",
+        "Framework and library design",
+        "Plugin architectures"
+      ],
+      "example": "class UserService {\n  constructor(database, logger) {\n    this.db = database;\n    this.logger = logger;\n  }\n  async getUser(id) {\n    this.logger.log(`Fetching user ${id}`);\n    return await this.db.findById(id);\n  }\n}",
+      "commonPitfalls": [
+        "Over-engineering simple applications",
+        "Creating circular dependencies",
+        "Not understanding when to use which injection type",
+        "Injecting too many dependencies (code smell)"
+      ]
+    },
+    "relatedConcepts": ["solid-principles", "inversion-of-control", "design-patterns"],
+    "imageDescription": "Dependency injection flow diagram"
+  },
+  {
+    "slug": "binary-search",
+    "title": "Binary Search Algorithm",
+    "description": "Learn the efficient binary search algorithm for finding elements in sorted arrays with O(log n) complexity.",
+    "category": "Algorithms",
+    "difficulty": "Beginner",
+    "keywords": ["binary search", "search algorithm", "divide and conquer", "logarithmic"],
+    "content": {
+      "introduction": "Binary Search is an efficient algorithm for finding an item in a sorted array by repeatedly dividing the search interval in half. It's one of the most fundamental algorithms in computer science.",
+      "keyPoints": [
+        "Requires sorted input array",
+        "Time complexity: O(log n)",
+        "Space complexity: O(1) for iterative, O(log n) for recursive",
+        "Significantly faster than linear search for large datasets"
+      ],
+      "useCases": [
+        "Searching in sorted databases",
+        "Finding insertion points",
+        "Dictionary lookups",
+        "Finding boundary values"
+      ],
+      "example": "function binarySearch(arr, target) {\n  let left = 0, right = arr.length - 1;\n  while (left <= right) {\n    const mid = Math.floor((left + right) / 2);\n    if (arr[mid] === target) return mid;\n    if (arr[mid] < target) left = mid + 1;\n    else right = mid - 1;\n  }\n  return -1;\n}",
+      "commonPitfalls": [
+        "Forgetting that array must be sorted",
+        "Integer overflow in mid calculation",
+        "Off-by-one errors in boundary conditions",
+        "Incorrect handling of duplicate elements"
+      ]
+    },
+    "relatedConcepts": ["sorting-algorithms", "time-complexity", "divide-and-conquer"],
+    "imageDescription": "Binary search visualization with array partitioning"
+  },
+  {
+    "slug": "event-loop",
+    "title": "JavaScript Event Loop",
+    "description": "Understand the JavaScript event loop and how it handles asynchronous operations in a single-threaded environment.",
+    "category": "JavaScript",
+    "difficulty": "Advanced",
+    "keywords": ["event loop", "call stack", "callback queue", "javascript runtime"],
+    "content": {
+      "introduction": "The Event Loop is the mechanism that allows JavaScript to perform non-blocking operations despite being single-threaded. It coordinates the execution of code, collection and processing of events, and execution of queued sub-tasks.",
+      "keyPoints": [
+        "JavaScript is single-threaded but can handle async operations",
+        "Call stack handles function execution",
+        "Web APIs handle async operations",
+        "Callback queue and microtask queue manage pending tasks"
+      ],
+      "useCases": [
+        "Understanding async behavior",
+        "Debugging timing issues",
+        "Optimizing performance",
+        "Avoiding blocking operations"
+      ],
+      "example": "console.log('1');\nsetTimeout(() => console.log('2'), 0);\nPromise.resolve().then(() => console.log('3'));\nconsole.log('4');\n// Output: 1, 4, 3, 2",
+      "commonPitfalls": [
+        "Blocking the event loop with heavy computations",
+        "Misunderstanding microtask vs macrotask priority",
+        "Assuming setTimeout executes exactly after specified time",
+        "Not understanding Promise execution timing"
+      ]
+    },
+    "relatedConcepts": ["async-await", "promises", "callbacks"],
+    "imageDescription": "Event loop architecture diagram with call stack and queues"
+  },
+  {
+    "slug": "solid-principles",
+    "title": "SOLID Design Principles",
+    "description": "Master the five SOLID principles for writing maintainable, scalable, and robust object-oriented code.",
+    "category": "Design Patterns",
+    "difficulty": "Advanced",
+    "keywords": ["solid principles", "object oriented design", "software architecture", "clean code"],
+    "content": {
+      "introduction": "SOLID is an acronym for five design principles that make software designs more understandable, flexible, and maintainable. These principles guide developers in creating better object-oriented systems.",
+      "keyPoints": [
+        "Single Responsibility: A class should have one reason to change",
+        "Open/Closed: Open for extension, closed for modification",
+        "Liskov Substitution: Subtypes must be substitutable for base types",
+        "Interface Segregation: Many specific interfaces better than one general",
+        "Dependency Inversion: Depend on abstractions, not concretions"
+      ],
+      "useCases": [
+        "Large-scale application architecture",
+        "Refactoring legacy code",
+        "Framework and library design",
+        "Team code quality standards"
+      ],
+      "example": "// Single Responsibility Principle\nclass UserAuthentication {\n  authenticate(credentials) { /*...*/ }\n}\nclass UserProfile {\n  updateProfile(data) { /*...*/ }\n}",
+      "commonPitfalls": [
+        "Over-engineering simple applications",
+        "Misinterpreting principles dogmatically",
+        "Creating too many small classes",
+        "Not balancing SOLID with pragmatism"
+      ]
+    },
+    "relatedConcepts": ["design-patterns", "dependency-injection", "clean-code"],
+    "imageDescription": "SOLID principles illustrated with code examples"
+  },
+  {
+    "slug": "big-o-notation",
+    "title": "Big O Notation and Time Complexity",
+    "description": "Learn to analyze algorithm efficiency using Big O notation and understand time and space complexity.",
+    "category": "Algorithms",
+    "difficulty": "Beginner",
+    "keywords": ["big o notation", "time complexity", "algorithm analysis", "performance"],
+    "content": {
+      "introduction": "Big O notation describes the performance or complexity of an algorithm, specifically how execution time or space requirements grow as input size increases. It's essential for comparing algorithm efficiency.",
+      "keyPoints": [
+        "Describes worst-case scenario by default",
+        "Focuses on growth rate, not exact operations",
+        "Common complexities: O(1), O(log n), O(n), O(n log n), O(n²)",
+        "Helps choose appropriate algorithms for problems"
+      ],
+      "useCases": [
+        "Algorithm selection and comparison",
+        "Performance optimization",
+        "Technical interviews",
+        "System design decisions"
+      ],
+      "example": "// O(1) - Constant\narray[0]\n\n// O(n) - Linear\narray.forEach(item => console.log(item))\n\n// O(n²) - Quadratic\nfor (let i=0; i<n; i++)\n  for (let j=0; j<n; j++)",
+      "commonPitfalls": [
+        "Confusing worst, average, and best case",
+        "Ignoring constant factors in practice",
+        "Not considering space complexity",
+        "Premature optimization based on Big O"
+      ]
+    },
+    "relatedConcepts": ["algorithm-analysis", "data-structures", "performance-optimization"],
+    "imageDescription": "Graph showing different Big O complexity curves"
+  }
+]
